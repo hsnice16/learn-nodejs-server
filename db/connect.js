@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 
-const uri = process.env.DB_URI;
+const uri = process.env.DB_URI || "mongodb://localhost:27017";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 const usersDataCollection = client.db("users_data_db").collection("users_data");
 
